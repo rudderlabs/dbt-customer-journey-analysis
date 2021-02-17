@@ -1,6 +1,6 @@
 # Customer Journey Analysis using DBT and RudderStack
 
-This repository contains a sample DBT project for Rudder stack. It can be applied on the RudderStack data residing in Google BigQuery. 
+This repository contains a sample DBT project for RudderStack. It can be applied on the RudderStack data residing in Google BigQuery. 
 
 ## Overview
 
@@ -59,3 +59,13 @@ The columns in this table are `event_id`, `session_id`, `track_sequence_number`,
 represented in each record. 
 
 **Note**: Please remember to change `schema` in `tracks.yml` and `dbt_aliases_mapping.sql` to your database schema.
+
+# What is RudderStack?
+
+[RudderStack](https://rudderstack.com/) is a **customer data pipeline** tool for collecting, routing and processing data from your websites, apps, cloud tools, and data warehouse.
+
+More information on RudderStack can be found [here](https://github.com/rudderlabs/rudder-server).
+
+## Contact us
+
+If you come across any issues while configuring or using this project, please feel free to start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel. We will be happy to help you.
