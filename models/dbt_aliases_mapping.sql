@@ -13,14 +13,14 @@ Typically a user would login to an application at least once while using the app
         select anonymous_id
           , user_id
           , timestamp as timestamp 
-        from {{ source("<schema>","tracks")}}
+        from {{ source("schema","tracks")}}
 
         union distinct
 
         select user_id
           , null
           , timestamp 
-        from {{ source("<schema>","tracks")}}
+        from {{ source("schema","tracks")}}
 
       )
 
