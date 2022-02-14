@@ -14,7 +14,7 @@ select *
           ,a2v.dbt_visitor_id
           ,t.timestamp
           ,t.event as event
-        from {{ source(<schema>,"tracks")}} as t
+        from {{ source("<schema>","tracks")}} as t
         inner join {{ ref('dbt_aliases_mapping') }} as a2v
         on a2v.alias = coalesce(t.user_id, t.anonymous_id)
         )
