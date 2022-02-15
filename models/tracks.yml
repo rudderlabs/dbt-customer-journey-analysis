@@ -1,6 +1,8 @@
 version: 2
 sources:
     - name: <schema>
+      database: "{{ var('rudder_customer_journey_database', target.database) }}"
+      schema: "{{ var('rudder_customer_journey_schema', 'rudder' ) }}"
       tables:
         - name: tracks
           columns:
