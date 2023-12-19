@@ -36,7 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  dbt_recharge:
+  dbt_customer_journey_analysis:
     base:
       schema: dbt_customer_journey_analysis
     transform:
