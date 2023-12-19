@@ -1,0 +1,25 @@
+name: lint dbt project on push
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+      - 'master'
+
+jobs:
+  lint_project:
+    name: Run SQLFluff linter
+    runs-on: ubuntu-latest
+  
+    steps:
+      - uses: "actions/checkout@v3"
+      - uses: "actions/setup-python@v2"
+        with:
+          python-version: "3.9"
+      - name: Install SQLFluff
+        run: "pip install sqlfluff-templater-dbt==2.3.5 dbt-core==1.6.0 pytz"
+      - name: Lint project
+        run: "sqlfluff lint -p 0 models/base"
+      - name: Lint project 2
+        run: "sqlfluff lint -p 0 models/transform"
+
