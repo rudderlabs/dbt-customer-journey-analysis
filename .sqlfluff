@@ -1,0 +1,43 @@
+[sqlfluff]
+templater = jinja
+dialect = snowflake
+rules = L001, L003, L006, L008, L009, L010, L014, L017, L019, L030, L036, L039, L046, L050, L063 
+exclude_rules = L011, L026, L027, L029, L031, L034, L051
+large_file_skip_byte_limit = 0
+
+; Autofixable Rules
+; L001 // trailing whitespace
+; L003 // indent
+; L006 // whitespace around =
+; L008 // comas followed by whitespace unless comment
+; L009 // files ending in newline
+; L010 // keyword case
+; L014 // case of identifiers
+; L017 // function not followed by paren
+; L019 // no leading comas
+; L030 // function name case
+; L036 // select on newline
+; L039 // extra whitespace
+; L050 // files not start with newline or whitespace
+; L063 // datatypes case
+
+; Can't autofix
+; L046 // jinja tag spacing
+
+[sqlfluff:indentation]
+indented_joins = false
+indented_using_on = true
+template_blocks_indent = false
+tab_space_size = 4
+indent_unit = space
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = consistent
+
+[sqlfluff:rules:capitalisation.identifiers]
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:aliasing.length]
+min_alias_length = 1
+
+
